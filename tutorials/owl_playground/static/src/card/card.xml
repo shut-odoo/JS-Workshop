@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="owl_playground.card" owl="1">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <t t-slot="title">
+                    <!-- <h5 class="card-title">My Card from card.xml</h5> -->
+                </t>
+                <t t-slot="default">default text</t>
+                <!-- <p class="card-text">
+                    Increament Component here...
+                </p> -->
+                <Counter/>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t owl="1" t-name="awesome_tshirt.clientaction">
+        <div class="o_awesome_tshirt_dashboard vh-100">
+            <Layout display="display">
+                <t t-set-slot="control-panel-bottom-left">
+                    <button class="btn btn-primary" t-on-click="getCustomers" 
+                        title="Customers" type="object">Customers</button>
+                    <button class="btn btn-primary" t-on-click="getNewOrders" 
+                        title="Customers" type="object">New Orders</button>
+                    <button class="btn btn-primary" t-on-click="getCancelledOrders" 
+                        title="Customers" type="object">Cancelled Orders</button>    
+                </t>
+            </Layout>
+            <div class="d-flex m-1">
+                <t t-as="eachData" t-foreach="Object.keys(keyToString)" t-key="eachData">
+                    <Card key="keyToString[eachData]" value="result[eachData]"/>
+                </t>
+            </div>
+            <PieChart values="Object.values(result.orders_by_size)" 
+                labels="Object.keys(result.orders_by_size)"
+                sizeOrderFunction.bind="openOrders"/>
+        </div>
+    </t>
+</templates>

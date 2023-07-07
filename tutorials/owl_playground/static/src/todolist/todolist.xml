@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t owl="1" t-name="owl_playground.todolist">
+        <p>
+            <input type="text" class="form-control" id="addTODO" aria-describedby="emailHelp" placeholder="Enter a new task" t-on-keyup="addTodo" t-ref="input"/>
+        </p>
+            <t t-as="eachData" t-foreach="todoList" t-key="eachData.id">
+                <!-- <Todo t-props="eachData"/> -->
+                <Todo id="eachData.id" description="eachData.description" done="eachData.done" myFunction.bind="toggleState" deleteFunction.bind="removeTodo" 
+                index="++eachData_index" />
+                <!-- We use binding here so that when this is called from todo.js, we keep the scope of todolist, and hence we are able to access and modify this.todoList -->
+            </t>
+    </t>
+</templates>

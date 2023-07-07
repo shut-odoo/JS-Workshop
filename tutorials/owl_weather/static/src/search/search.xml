@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t owl="1" t-name="owl_weather.search">
+        <p>
+            <select class="form-select" aria-label="Default select example" 
+                t-ref="input" id="citySelect">
+                <option>Choose a City</option>
+                <option value="1">Gandhinagar</option>
+                <option value="2">Ahmedabad</option>
+                <option value="3">Surat</option>
+            </select>
+            <button class="btn btn-primary" t-on-click="searchCity"
+                style="margin:15px">ChecK!</button>
+            <SearchDisplay t-if="displayCity[0]" 
+                id="displayCity[0].id" temp="displayCity[0].temp"
+                wind="displayCity[0].wind" type="displayCity[0].type"
+                city="displayCity[0].city"/>
+        </p>
+    </t>
+</templates>

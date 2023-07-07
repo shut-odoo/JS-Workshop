@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+          <template id="owl_weather.weather" name="Awesome weather APP">
+            <html>
+                <head>
+                    <t t-call-assets="owl_weather.assets_weather"/>
+                </head>
+
+                <body>
+                </body>
+            </html>
+          </template>
+    </data>
+</odoo>

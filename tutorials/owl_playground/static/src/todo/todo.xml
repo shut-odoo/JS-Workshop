@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t owl="1" t-name="owl_playground.todo">
+        <div class="d-flex align-items-center gap-2">
+            <input type="checkbox" 
+                t-att-checked="props.done"
+                t-on-click="()=>this.toggleState(props.id)"/>
+            <!-- Can also write t-on-click="ev => this.props.myFunction(props.id)" -->
+            <div class="d-flex justify-content-center align-items-center" 
+                t-att-class="{'text-decoration-line-through text-muted': props.done}">
+                <div style="font-weight: bold"><t t-esc="props.index"/>. </div>
+                <div><t t-esc="props.description"/></div>
+            </div>
+            <span class="fa fa-remove ms-1" t-on-click="()=>this.props.deleteFunction(props.id)"
+                style="color: red; cursor: pointer;"/>
+        </div>
+    </t>
+</templates>
